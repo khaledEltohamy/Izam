@@ -21,9 +21,10 @@ A few resources to get you started if this is your first Flutter project:
 
 In this case we used Hive for reasons that are left to you in the link:
 - [Lab: Write Hive Database NoSql](https://pub.dev/packages/hive)
-The user table consists of:
 
-ID: (Key attribute) It is configured automatically and represents the foreign key when using any types of relationships between the database and is drawn in (ERD, EERD) diagram.
+The user table consists of (The most prominent qualities):
+
+ID: (Key attribute) It is configured automatically and represents the foreign key when using any types of relationships between the database and is drawn in (ERD (Entity Relationship Diagram), EER (Enhanced Entity-relationship diagram)) diagrams.
 
 counter: it expresses a variable element (Dividend attribute).
 
@@ -31,3 +32,5 @@ counter: it expresses a variable element (Dividend attribute).
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+The code provides comments for improvement to make it more readable.

@@ -4,8 +4,14 @@ import 'package:equatable/equatable.dart';
 import '../../domain/entities/user_entity.dart';
 
 abstract class BaseLocalDataSource extends Equatable {
-  insertItem(UserEntity user);
-  updateItem();
-  getItem();
-  deleteItem();
+  Future<UserEntity> addItem(String email, String pass);
+  Future<UserEntity> editItem(
+    UserEntity user,
+    String email,
+    String pass,
+    int counter,
+  );
+  bool queryItem(UserEntity entity);
+  List<UserEntity> getUsers();
+  void deleteItem(UserEntity user);
 }

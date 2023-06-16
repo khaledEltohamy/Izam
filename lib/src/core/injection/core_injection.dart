@@ -1,4 +1,5 @@
 import 'package:get_it/get_it.dart';
+import 'package:izam/src/modules/auth/data/datasource/base_local_datasource.dart';
 import 'package:izam/src/modules/auth/data/datasource/hive_datasource.dart';
 import 'package:izam/src/modules/auth/data/repository/imp_auth_repository.dart';
 import 'package:izam/src/modules/auth/domain/repository/auth_repository.dart';
