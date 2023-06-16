@@ -17,8 +17,15 @@ A few resources to get you started if this is your first Flutter project:
 
 - [Lab: Write REG EXP](https://blog.0xba1.xyz/0522/dart-flutter-regexp/)
 
-- [Lab: Write Hive Database NoSql](https://pub.dev/packages/hive)
 
+
+In this case we used Hive for reasons that are left to you in the link:
+- [Lab: Write Hive Database NoSql](https://pub.dev/packages/hive)
+The user table consists of:
+
+ID: (Key attribute) It is configured automatically and represents the foreign key when using any types of relationships between the database and is drawn in (ERD, EERD) diagram.
+
+counter: it expresses a variable element (Dividend attribute).
 
 
 For help getting started with Flutter development, view the
