@@ -22,9 +22,6 @@ lib/src/modules/auth/presentation/bloc/auth_bloc/auth_bloc.dart
 
 - [Lab: Sqflite](https://pub.dev/packages/sqflite)
 
-
-This is to leave the basic hive for some of its advantages:
-
 ## In this case we used Hive as default : 
 for reasons that are left to you in the link:
 - [Lab: Hive](https://pub.dev/packages/hive)
