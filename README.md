@@ -11,15 +11,16 @@ A few resources to get you started if this is your first Flutter project:
 - [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
 - [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-In these tasks two types of Databases were used and they are ( HIVE , SQFLITE),
+In these tasks two types of Databases were used and they are ( HIVE , SQFLITE).
+
 SQLFLITE This is to apply the SQL language and also benefit from the features of HIVE.
+
 They are separated when exiting the presentation layer, which is controlled by the Ui and Logic section.
 
 To try both of them, please refer to the comment, lines (19-23) in this path.
 lib/src/modules/auth/presentation/bloc/auth_bloc/auth_bloc.dart
 
 - [Lab: Sqflite](https://pub.dev/packages/sqflite)
-
 This is to leave the basic hive for some of its advantages:
 
 ## In this case we used Hive as default : 
