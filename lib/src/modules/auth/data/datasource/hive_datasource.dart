@@ -1,6 +1,7 @@
-import 'package:izam/src/modules/auth/domain/entities/user_entity.dart';
+import 'package:izam/src/modules/auth/domain/entities/base_user.dart';
 
-import '../../../../core/Sql/hive_boxes.dart';
+import '../../../../core/Database/hive_boxes.dart';
+import '../../domain/entities/user_entity.dart';
 import 'base_local_datasource.dart';
 
 class HiveDataSource extends BaseLocalDataSource {
@@ -17,11 +18,12 @@ class HiveDataSource extends BaseLocalDataSource {
 
   @override
   Future<UserEntity> editItem(
-    UserEntity user,
+    BaseUser user,
     String email,
     String pass,
     int counter,
   ) async {
+    user as UserEntity;
     user.email = email;
     user.password = pass;
     user.counter = counter;
@@ -30,21 +32,29 @@ class HiveDataSource extends BaseLocalDataSource {
   }
 
   @override
-  bool queryItem(UserEntity entity) {
+  Future<UserEntity?> queryItem(BaseUser entity) async {
+    entity as UserEntity;
     final box = Boxes.getUserBox();
     bool contains = box.containsKey(entity.key);
-    return contains;
+    if (contains) {
+      return entity;
+    } else {
+      return null;
+    }
   }
 
   @override
-  List<UserEntity> getUsers() {
+  Future<List<UserEntity>> getUsers() {
     final box = Boxes.getUserBox();
     final users = box.values.toList().cast<UserEntity>();
-    return users;
+    return Future.value(users);
   }
 
   @override
-  void deleteItem(UserEntity user) => user.delete();
+  void deleteItem(BaseUser user) {
+    user as UserEntity;
+    user.delete();
+  }
 
   @override
   List<Object?> get props => [];

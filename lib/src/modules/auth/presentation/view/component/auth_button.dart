@@ -7,16 +7,11 @@ import '../../../../../core/widget/button_app.dart';
 import '../../../../../utils/extensions/keys.dart';
 import '../../bloc/auth_bloc/auth_bloc.dart';
 
-// ignore: must_be_immutable
 class AuthButton extends StatelessWidget {
-  final String email, pass;
+  final TextEditingController email, pass;
   final GlobalKey<FormState> formKey;
   GlobalKey<ScaffoldState> key = Keys.scaffoldKey();
-  AuthButton(
-      {super.key,
-      required this.email,
-      required this.pass,
-      required this.formKey});
+  AuthButton({required this.email, required this.pass, required this.formKey});
 
   @override
   Widget build(BuildContext context) {
@@ -64,9 +59,11 @@ class AuthButton extends StatelessWidget {
                 ],
               ).authMaterialBanner(key.currentContext!));
             } else {
+              print(email);
+              print(pass);
               BlocProvider.of<AuthBloc>(context).add(LoginEvent(
-                email,
-                pass,
+                email.text,
+                pass.text,
               ));
             }
           },

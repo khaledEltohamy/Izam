@@ -1,17 +1,15 @@
-import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
-
-import '../../domain/entities/user_entity.dart';
+import 'package:izam/src/modules/auth/domain/entities/base_user.dart';
 
 abstract class BaseLocalDataSource extends Equatable {
-  Future<UserEntity> addItem(String email, String pass);
-  Future<UserEntity> editItem(
-    UserEntity user,
+  Future<BaseUser> addItem(String email, String pass);
+  Future<BaseUser> editItem(
+    BaseUser user,
     String email,
     String pass,
     int counter,
   );
-  bool queryItem(UserEntity entity);
-  List<UserEntity> getUsers();
-  void deleteItem(UserEntity user);
+  Future<BaseUser?> queryItem(BaseUser entity);
+  Future<List<BaseUser>> getUsers();
+  void deleteItem(BaseUser user);
 }

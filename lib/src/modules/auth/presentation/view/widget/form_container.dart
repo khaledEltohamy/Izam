@@ -70,8 +70,8 @@ class FormContainerWidget extends StatelessWidget {
                                     fontSize: 12,
                                     fontWeight: FontWeight.w500)))),
                     AuthButton(
-                      email: _emailTextController.text,
-                      pass: _passTextController.text,
+                      email: _emailTextController,
+                      pass: _passTextController,
                       formKey: _formKey,
                     ),
                   ]

@@ -1,7 +1,7 @@
-import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:izam/src/core/errors/error_model.dart';
-import 'package:izam/src/modules/auth/domain/entities/user_entity.dart';
+import 'package:izam/src/modules/auth/domain/entities/base_user.dart';
 import 'package:izam/src/modules/auth/domain/usecase/auth_usecase.dart';
 
 part 'auth_event.dart';
@@ -15,7 +15,13 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
   _handelLoginEvent(LoginEvent event, Emitter<AuthState> emit) async {
     emit(LoginLoading());
-    final result = await useCaseAuth.login(event.email, event.pass);
+
+    /// Using Two types of database.
+    // PLEASE CHANGE (login) to (loginSql)
+    //login : can use Hive DataBase
+    // loginSql : can use Sqflite DataBase
+
+    final result = await useCaseAuth.loginSql(event.email, event.pass);
     result.fold(
         (field) => emit(LoginField(ErrorModel.convertFailureError(field))),
         (success) => emit(LoginSuccess(success)));
