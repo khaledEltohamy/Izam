@@ -26,7 +26,7 @@ This is to leave the basic hive for some of its advantages:
 ## In this case we used Hive as default : 
 for reasons that are left to you in the link:
 - [Lab: Hive](https://pub.dev/packages/hive)
-
+## DataBase:
 The user table consists of (The most prominent qualities):
 
 ID: (Key attribute) It is configured automatically and represents the foreign key when using any types of relationships between the database and is drawn in (ERD (Entity Relationship Diagram), EER (Enhanced Entity-relationship diagram)) diagrams.
